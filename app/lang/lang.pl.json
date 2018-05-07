@@ -1,0 +1,9 @@
+{
+  "error.server.internal": "Wystąpił błąd po stronie serwera. Jeśli problem będzie się powtarzał prosimy o kontakt telefoniczny lub na email biuro@autosolid.eu",
+  "error.email.invalid.address": "Podany adres email nie jest poprawny.",
+  "error.email.failed.send": "Wystąpił problem z wysłaniem wiadomości. Odczekaj chwilę i spróbuj ponownie.",
+
+  "contact.email.title": "[autosolid.eu] Wiadomość z formularza kontaktowego",
+  "contact.confirmation.title": "Autosolid - Dziękujemy za kontakt",
+  "contact.confirmation.message": "Witaj {name},<br><br>Dziękujemy za skorzystanie z formularza kontaktowego na naszej stronie. Twoja wiadomość została dostarczona do naszego biura. Postaramy się na nią odpowiedzieć najszybciej jak to możliwe.<br><br>W razie pytań prosimy o kontakt telefoniczny pod numerami:<br>+48 607 693 774<br>+48 607 300 324<br><br>Dziękujemy za zainteresowanie naszymi usługami!<br><br><b>Zespół Autosolid s.c.</b><br>{contactEmail}"
+}

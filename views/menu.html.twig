@@ -1,0 +1,27 @@
+
+<nav class="consult-nav">
+
+    <ul class="consult-menu">
+        <li {% if currentPage == '' or currentPage == 'start' %}class="current-menu-item"{% endif %}>
+            <a href="{{ url('start') }}">Start</a>
+        </li>
+        <li {% if currentPage == 'about' %}class="current-menu-item"{% endif %}>
+            <a href="{{ url('about') }}">O firmie</a>
+        </li>
+        <li class="menu-item-has-children {% if currentPage == 'services' or 'service' in currentPage %}current-menu-item{% endif %}"><a href="{{ url('services') }}">Usługi</a>
+            <ul class="sub-menu">
+                <li><a href="{{ url('serviceCarwash') }}">Myjnia cystern</a>
+                </li>
+                <li><a href="{{ url('serviceRepair') }}">Warsztat</a>
+                </li>
+                <li><a href="{{ url('serviceTransport') }}">Transport</a>
+                </li>
+            </ul>
+        </li>
+        <li {% if currentPage == 'contact' %}class="current-menu-item"{% endif %}>
+            <a href="{{ url('contact') }}">Kontakt</a>
+        </li>
+    </ul>
+
+    <div class="navbar-toggle"><span></span><span></span><span></span></div>
+</nav>

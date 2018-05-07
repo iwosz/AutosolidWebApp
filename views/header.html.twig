@@ -1,0 +1,31 @@
+
+<header class="header {% if currentPage == '' or currentPage == 'start' %}header-style-02{% endif %}">
+    <div class="container">
+        <div class="header-logo">
+            <a href="{{ url('start') }}">
+                <img id="header-logo" class="page-{{ currentPage }}" src="{{ url('start') }}public/img/logo-color.png" alt=""/>
+            </a>
+        </div>
+        <div class="header-toogleGroup">
+            <div class="header-chooseLanguage">
+                <a class="language-toggle" href="javascript:void(0)">PL</a>
+            </div>
+
+            <div class="search-form">
+                <div class="search-form-toggle"><i class="fa fa-search"></i></div>
+                <div class="search-form-form">
+
+                    <div class="form-search">
+                        <form>
+                            <input class="form-control" type="text" placeholder="Enter aby wyszukać lub ESC aby zamknąć"/>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {% include('menu.html.twig') %}
+
+    </div>
+</header>
