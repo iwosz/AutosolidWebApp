@@ -1,0 +1,105 @@
+
+<div class="md-content">
+
+    <section class="md-section map-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2">
+                    <div class="title-01">
+                        <h2 class="title-01-title">Dane kontaktowe</h2>
+                        <div>Zapraszamy do kontaktu telefonicznego lub elektronicznego z naszym biurem w Odrzywołku :)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactDataSection" class="md-section js-consult-form" style="background-color:#f7f7f7; border-top: 1px solid #e9e9e9;">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <div class="iconbox iconbox-style-02">
+                        <div class="iconbox-icon"><i class="fa fa-map-marker"></i></div>
+                        <div>
+                            <h2 class="iconbox-title">Adres</h2>
+                            <div class="iconbox-description">Odrzywołek 24a<br>05-622 Belsk Duży<br>Polska</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="iconbox iconbox-style-02">
+                        <div class="iconbox-icon"><i class="fa fa-phone"></i></div>
+                        <div>
+                            <h2 class="iconbox-title">Telefony</h2>
+                            <div class="iconbox-description">Kom: +48 607 693 774</div>
+                            <div class="iconbox-description">Kom: +48 607 300 324</div>
+                            <div class="iconbox-description">Tel/Fax: (48) 66 11 368</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="iconbox iconbox-style-02">
+                        <div class="iconbox-icon"><i class="fa fa-envelope"></i></div>
+                        <div>
+                            <h2 class="iconbox-title">Email</h2>
+                            <div class="iconbox-description"><a href="mailto:biuro@autosolid.eu"><span class="text-big">biuro@autosolid.eu</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-01 consult-form js-consult-form-content">
+                {% if actionCode == 'contact-send-email' %}
+                    {% if action.result == true %}
+                        <div class="alert alert-success" role="alert"><strong><i class="fa fa-check"></i> Operacja wykonana poprawnie.</strong></div>
+                    {% else %}
+                        <div class="alert alert-warning" role="alert"><strong><i class="fa fa-warning"></i> Wystąpił problem z wykonaniem operacji.</strong>
+                        {% if action.errors is not empty %}
+                            <ul class="list-unstyled">
+                            {% for errorMessage in action.errors %}
+                                <li><i class="fa fa-caret-right"></i> {{ errorMessage }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+                <h2 class="form-01-title">Napisz do nas</h2>
+                <form id="contactForm" class="form-01-form" action="{{ url('contact') }}" method="post">
+                    <input type="hidden" name="actionCode" value="contact-send-email" />
+                    <div class="form-item form-item--03">
+                        <input type="text" id="contact-name" name="contactName" placeholder="Imię"/>
+                    </div>
+                    <div class="form-item form-item--03">
+                        <input type="text" id="contact-last-name" name="contactLastName" placeholder="Nazwisko"/>
+                    </div>
+                    <div class="form-item form-item--03">
+                        <input type="email" id="contact-email" name="contactEmail" placeholder="Email"/>
+                    </div>
+                    <div class="form-item">
+                        <textarea rows="3" id="contact-message" name="contactMessage" placeholder="Treść wiadomości"></textarea>
+                    </div>
+                    <div class="form-button">
+                        <a class="btn btn-primary btn-w180" href="#" onclick="$('#contactForm').submit()">Wyślij wiadomość</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="md-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
+                    <div class="title-01 title-01-style-05">
+                        <h2 class="title-01-title">Dziękujemy że wybraliście nasze usługi! <i class="fa fa-heart text-danger fx-text-pulse"></i> </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

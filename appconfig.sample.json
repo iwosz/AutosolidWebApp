@@ -1,0 +1,17 @@
+{
+  "name": "Autosolid_WebApp",
+  "version": "1.0.0",
+  "author": "hello@maciejwasiak.com",
+  "settings": {
+    "locale": "pl",
+    "swiftmailer": {
+      "host": "",
+      "port": 0,
+      "username": "",
+      "password": "",
+      "encryption": null,
+      "auth_mode": ""
+    },
+    "contactEmail": ""
+  }
+}
