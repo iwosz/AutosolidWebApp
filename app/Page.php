@@ -11,17 +11,29 @@ namespace App;
 
 class Page
 {
-    public $name;
-    public $title;
+    private $name;
+    private $title;
+    private $url;
 
-    function __construct($name, $title)
+    function __construct($url, $name, $title)
     {
         $this->name = $name;
         $this->title = $title;
+        $this->url = $url;
     }
 
     public function getTitle()
     {
         return !empty($this->title) ? $this->title : '';
+    }
+
+    public function getName()
+    {
+        return !empty($this->name) ? $this->name : '';
+    }
+
+    public function getUrl()
+    {
+        return !empty($this->url) ? $this->url : '';
     }
 }

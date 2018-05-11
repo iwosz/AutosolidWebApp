@@ -25,19 +25,19 @@ class Application extends SilexApplication
     private $rootDir;
     private $env;
 
-    public function __construct($env = "prod")
+    public function __construct($env = Application::ENV_PROD)
     {
+        parent::__construct();
+
         $this->rootDir = __DIR__ .'/../';
         $this->env = $env;
 
-        parent::__construct();
-
         $config = AppConfig::getInstance()->get();
-        $app = $this;
 
+        $app = $this;
         $app['locale'] = $config->settings->locale;
 
-        if($this->env === "dev")
+        if($this->env === Application::ENV_DEV)
         {
             $app['debug'] = true;
         }

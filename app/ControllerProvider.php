@@ -32,73 +32,31 @@ class ControllerProvider implements ControllerProviderInterface
         $this->appConfig = AppConfig::getInstance()->get();
         $this->lang = Lang::getInstance()->get();
         $this->pages = array(
-            'start' => new Page('start', '/ Witamy!'),
-            'about' => new Page('about', '/ O firmie'),
-            'contact' => new Page('contact', '/ Kontakt'),
-            'contactSend' => new Page('contactSend', '/ Kontakt'),
-            'services' => new Page('services', '/ Usługi'),
-            'serviceCarwash' => new Page('serviceCarwash', '/ Usługi / Myjnia cystern'),
-            'serviceRepair' => new Page('serviceRepair', '/ Usługi / Warsztat'),
-            'serviceTransport' => new Page('serviceTransport', '/ Usługi / Transport'),
+            'start' => new Page('/', 'start','/ Witamy!'),
+            'about' => new Page('/about/', 'about', '/ O firmie'),
+            'contact' => new Page('/contact/', 'contact', '/ Kontakt'),
+            'services' => new Page('/services/', 'services', '/ Usługi'),
+            'serviceCarwash' => new Page('/services/carwash/', 'serviceCarwash', '/ Usługi / Myjnia cystern'),
+            'serviceRepair' => new Page('/services/repair/', 'serviceRepair', '/ Usługi / Warsztat'),
+            'serviceTransport' => new Page('/services/transport/', 'serviceTransport', '/ Usługi / Transport'),
         );
-
         $this->layoutFile = 'layout.html.twig';
 
         $controllers = $app['controllers_factory'];
 
-        // todo: validation
-        // todo: $this->pages loop -> set handlers ?
-
-        $controllers
-            ->get('/', [$this, $this->pages['start']->name])
-            ->bind($this->pages['start']->name);
-
-        /*$controllers
-            ->get('/status', [$this, 'status'])
-            ->bind('status');*/
-
-        $controllers
-            ->get('/about/', [$this, $this->pages['about']->name])
-            ->bind($this->pages['about']->name);
-
-        $controllers
-            ->get('/services/', [$this, $this->pages['services']->name])
-            ->bind($this->pages['services']->name);
-
-        $controllers
-            ->get('/services/carwash/', [$this, $this->pages['serviceCarwash']->name])
-            ->bind($this->pages['serviceCarwash']->name);
-
-        $controllers
-            ->get('/services/repair/', [$this, $this->pages['serviceRepair']->name])
-            ->bind('serviceRepair');
-
-        $controllers
-            ->get('/services/transport/', [$this, $this->pages['serviceTransport']->name])
-            ->bind($this->pages['serviceTransport']->name);
-
-        $controllers
-            ->get('/contact/', [$this, $this->pages['contact']->name])
-            ->bind($this->pages['contact']->name);
+        /* @var $page Page */
+        foreach($this->pages as $action => $page)
+        {
+            $controllers
+                ->get($page->getUrl(), [$this, $action])
+                ->bind($action);
+        }
 
         $controllers->post('/contact/', function (Request $request) {
             return $this->contactSend($request);
-        })->bind($this->pages['contactSend']->name);
+        })->bind('contactSend');
 
         return $controllers;
-    }
-
-    public function status()
-    { // maintenance purpose only
-        if(!$this->app['debug'])
-        {
-            return null; // todo - redirect to index
-        }
-
-        $output = 'App powered by Silex v2+';
-        $output .= '<br>PHP version 7+';
-
-        return $output;
     }
 
     public function start()
@@ -205,7 +163,7 @@ class ControllerProvider implements ControllerProviderInterface
     private function renderPage(Page $page, $params = array())
     {
         $pageParams = array_merge(array(
-            'currentPage' => $page->name,
+            'currentPage' => $page->getName(),
             'title' => $page->getTitle(),
             'year' => date('Y')
         ), $params);
