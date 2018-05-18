@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file is a ROR Sitemap for describing this website to the search engines. For details about the ROR format, go to www.rorweb.com.   -->
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+    <channel>
+        <title>ROR Sitemap for http://autosolid.eu/</title>
+        <link>http://autosolid.eu/</link>
+        <item>
+            <title>ROR Sitemap for http://autosolid.eu/</title>
+            <link>http://autosolid.eu/</link>
+            <ror:about>sitemap</ror:about>
+            <ror:type>SiteMap</ror:type>
+        </item>
+        <item>
+            <link>http://autosolid.eu/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/public/img/logo-color.png</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/public/fonts/fontawesome/font-awesome.min.css</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/public/css/bundle.css</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/about/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/services/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/services/carwash/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/services/repair/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/services/transport/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+        <item>
+            <link>http://autosolid.eu/contact/</link>
+            <ror:updatePeriod>week</ror:updatePeriod>
+            <ror:sortOrder>0</ror:sortOrder>
+            <ror:resourceOf>sitemap</ror:resourceOf>
+        </item>
+    </channel>
+</rss>
