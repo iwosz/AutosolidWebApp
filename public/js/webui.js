@@ -91,11 +91,20 @@ var WebUI = {
                 if ($.contains(el, event.target)) {
                     return;
                 }
-
                 if ($(el).hasClass('open')) {
                     $(el).removeClass('open');
                 }
             });
+        });
+
+        $('#searchValue').on('keyup', function (event) {
+            var text = $('#searchValue').val();
+
+            if(text.length > 2 && event.key === 'Enter') {
+                WebUI.Helpers.highlight(text);
+            } else {
+                WebUI.Helpers.clearHighlight();
+            }
         });
     },
 
@@ -364,6 +373,24 @@ var WebUI = {
             if (typeof console === 'undefined') return false;
 
             console.log(data);
+        },
+
+        highlight: function (text) {
+            if (typeof $.fn.mark === 'undefined') {
+                if(WebUI.debug) alert('Error: jQuery mark.js plugin object undefined. Operation canceled.');
+                return false;
+            }
+
+            $('body').mark(text);
+        },
+
+        clearHighlight: function () {
+            if (typeof $.fn.mark === 'undefined') {
+                if(WebUI.debug) alert('Error: jQuery mark.js plugin object undefined. Operation canceled.');
+                return false;
+            }
+
+            $('body').unmark();
         }
     }
 };

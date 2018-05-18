@@ -45,6 +45,7 @@ function bundleTask() {
         'public/vendors/owl.carousel/owl.carousel.min.js',
         'public/vendors/menu/menu.min.js',
         'public/vendors/smoothscroll/SmoothScroll.min.js',
+        'public/vendors/mark.js/jquery.mark.min.js',
         'public/js/webui.js'
     ];
     gulp.src(jsFiles)
