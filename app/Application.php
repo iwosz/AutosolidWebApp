@@ -44,6 +44,7 @@ class Application extends SilexApplication
 
         $app->register(new MonologServiceProvider(), array(
             'monolog.logfile' => __DIR__.'/logs/' . $this->env . '.' . date('Ym') . '.log',
+            'monolog.level' => "WARNING"
         ));
         $app->register(new TwigServiceProvider(), array(
             'twig.path' => array($this->rootDir . '/views'), // todo: add locale subfolder for localised templates eg: /views/pl
@@ -82,6 +83,4 @@ class Application extends SilexApplication
     {
         return $this->env;
     }
-
-
 }
