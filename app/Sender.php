@@ -38,6 +38,7 @@ class Sender
 
             if(!$result)
             {
+                $this->app['monolog']->error('Email send failed to ' . $params['toEmail']);
                 $webAction->setError($this->lang['error.email.failed.send']);
             }
         } catch (\Exception $ex)

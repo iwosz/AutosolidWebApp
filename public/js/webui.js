@@ -10,7 +10,7 @@
 var WebUI = {
     version: '1.1',
     debug: true,
-    appUrl: 'http://autosolid.eu/',
+    appUrl: 'https://autosolid.eu/',
 
     themeParams: {
         logoFile: 'logo-white.png',

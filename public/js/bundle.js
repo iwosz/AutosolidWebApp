@@ -56,7 +56,7 @@ $.fn.dropdownMenu=function(n){return $(this).each(function(){var e=$(this),s={me
 var WebUI = {
     version: '1.1',
     debug: true,
-    appUrl: 'http://autosolid.eu/',
+    appUrl: 'https://autosolid.eu/',
 
     themeParams: {
         logoFile: 'logo-white.png',

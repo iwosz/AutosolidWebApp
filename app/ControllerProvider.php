@@ -117,9 +117,10 @@ class ControllerProvider implements ControllerProviderInterface
         $webAction = new WebAction(true);
         $currentPage = $this->pages['contact'];
         $params = $request->request->all();
+        
         $errors = $this->app['validator']->validate($params['contactEmail'], new Assert\Email());
 
-        if (count($errors) > 0)
+        if (empty($params['contactEmail']) or count($errors) > 0)
         {
             $webAction->setError($this->lang['error.email.invalid.address']);
         } else

@@ -1,7 +1,7 @@
 
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var projectDir = '../../../../Web/autosolid/silex';
+var projectDir = '../../../../Web/projects/autosolid/silex';
 
 gulp.task('default', defaultTask);
 
@@ -34,7 +34,7 @@ function copyTask(done) {
 
 gulp.task('bundle', bundleTask);
 
-function bundleTask() {
+function bundleTask(done) {
     var jsFiles = [
         'public/vendors/jquery/jquery.min.js',
         'public/vendors/bootstrap4/bootstrap.min.js',
@@ -62,6 +62,8 @@ function bundleTask() {
     gulp.src(cssFiles)
         .pipe(concat('bundle.css'))
         .pipe(gulp.dest('public/css'));
+
+    done();
 }
 
-gulp.task('deploy', ['bundle', 'copy']);
+gulp.task('deploy', gulp.series(gulp.parallel('bundle', 'copy')));
