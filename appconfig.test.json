@@ -1,0 +1,21 @@
+{
+  "name": "Autosolid_WebApp",
+  "version": "1.3.0",
+  "author": "hello@maciejwasiak.com",
+  "settings": {
+    "locale": "pl",
+    "swiftmailer": {
+      "host": "smtp.dpoczta.pl",
+      "port": 25,
+      "username": "biuro@autosolid.eu",
+      "password": "1Xy6x4U8KwfV",
+      "encryption": null,
+      "auth_mode": null
+    },
+    "contactEmail": "hello@maciejwasiak.com",
+    "recaptcha": {
+      "secretKey": "6LedhtcUAAAAABdi_2M-ROJT6ih42e65npiOG3N3",
+      "publicKey": "6LedhtcUAAAAADkzvPFBRqetcR_Qm9OlwXKc6g4b"
+    }
+  }
+}

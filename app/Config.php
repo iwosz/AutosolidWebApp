@@ -32,6 +32,11 @@ class Config
 
     public static function get()
     {
+        if(!static::$config)
+        {
+            static::$config = Config::getConfigFromFile();
+        }
+
         return static::$config;
     }
 

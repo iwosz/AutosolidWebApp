@@ -50,7 +50,19 @@
             </div>
 
 
-
+            <script src="https://www.google.com/recaptcha/api.js?render={{ recaptchaKey }}"></script>
+            <script>
+                function contactFormSubmit() {
+                    WebUI.scrollTo('#contactDataSection');
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('{{ recaptchaKey }}', {action: 'homepage'}).then(function(token) {
+                            $('#recaptchaToken').val(token);
+                            $('#messageSending').show();
+                            $('#contactForm').submit();
+                        });
+                    });
+                }
+            </script>
             <div class="form-01 consult-form js-consult-form-content">
                 {% if actionCode == 'contact-send-email' %}
                     {% if action.result == true %}
@@ -67,27 +79,33 @@
                         </div>
                     {% endif %}
                 {% endif %}
+                <div class="alert alert-info" id="messageSending" style="display: none" role="alert"><strong><i class="fa fa-circle-o-notch fa-spin"></i> Trwa weryfikacja adresu email...</strong></div>
                 <h2 class="form-01-title">Napisz do nas</h2>
                 <form id="contactForm" class="form-01-form" action="{{ url('contact') }}" method="post">
                     <input type="hidden" name="actionCode" value="contact-send-email" />
+                    <input type="hidden" id="recaptchaToken" name="recaptchaToken" value="" />
+                    <input type="text" class="contact-special" id="contactEmail" name="contactEmail"/>
+
                     <div class="form-item form-item--03">
-                        <input type="text" id="contact-name" name="contactName" placeholder="Imię"/>
+                        <input type="text" id="contact-value1" name="contact-value1" placeholder="Imię"/>
                     </div>
                     <div class="form-item form-item--03">
-                        <input type="text" id="contact-last-name" name="contactLastName" placeholder="Nazwisko"/>
+                        <input type="text" id="contact-value2" name="contact-value2" placeholder="Nazwisko"/>
                     </div>
                     <div class="form-item form-item--03">
-                        <input type="email" id="contact-email" name="contactEmail" placeholder="Email"/>
+                        <input type="email" id="contact-value3" name="contact-value3" placeholder="Email"/>
                     </div>
                     <div class="form-item">
-                        <textarea rows="3" id="contact-message" name="contactMessage" placeholder="Treść wiadomości"></textarea>
+                        <textarea rows="3" id="contact-value4" name="contact-value4" placeholder="Treść wiadomości"></textarea>
                     </div>
                     <div class="form-button">
-                        <a class="btn btn-primary btn-w180" href="#" onclick="$('#contactForm').submit()">Wyślij wiadomość</a>
+                        <a class="btn btn-primary btn-w180" href="#" onclick="contactFormSubmit()">Wyślij wiadomość</a>
                     </div>
                 </form>
             </div>
+            <script>
 
+            </script>
         </div>
     </section>
 

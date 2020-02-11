@@ -16,6 +16,11 @@ Web application managing Autosolid web page. Application is powered by Symphony/
 ### Changelog
 Description of important changes in each version of application.
 
+#### v1.3 @2020-02-10
+* Added reCaptcha v3 support
+* Added EmailValidator plugin
+* Added anty-spam-bots validation
+
 #### v1.2 @2018-04-28
 * Added Config class
 * Added Lang class

@@ -4951,3 +4951,7 @@ mark, .mark {
     font-weight: bold;
     padding: 15px;
 }
+
+input.contact-special {
+    display: none;
+}
