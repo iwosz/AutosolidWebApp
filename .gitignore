@@ -3,3 +3,4 @@
 node_modules/*
 phploy.ini
 appconfig.json
+appconfig.test.json
